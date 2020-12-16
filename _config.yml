@@ -7,7 +7,10 @@
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # --------------------------
-title: Steadily, Constantly, Consistently                          # the main title
+title: Steadily, Constantly, Consistently
+
+plugins:
+  - jekyll-sitemap                      # the main title
 
 tagline: Newb Programmer  # it will display as the sub-title
 
