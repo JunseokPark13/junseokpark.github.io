@@ -1,7 +1,7 @@
 ---
 title: '[Python] 네이버 카페에 덧글 달아주는 매크로 제작기 - 1'
 author: Bandito
-date: 2020-12-17 13:40:00 +0900
+date: 2020-12-17 20:40:00 +0900
 categories: [Study, Python]
 tags: [Python, toy]
 toc: false
