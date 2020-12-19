@@ -99,14 +99,14 @@ driver.find_element_by_xpath('//*[@id="log.login"]').click()
 로그인 버튼을 지정하여 클릭하게 한다.
 
 칸을 지정하는 방법은 여러가지가 있지만, 나는 id와 xpath 를 사용하여 찾는 방법을 썼다.   
-![Alt text](/assets/img/posting/f12_1.png)
+![Alt text](/assets/img/posting/f12_1.PNG)
 구글 크롬이라면 f12 를 눌러 개발자 모드를 켠다.   
 사진에 빨간색으로 동그라미 친 버튼을 누른 뒤 페이지의 요소들을 클릭하면 해당 요소의 html 코드를 확인할 수 있다.   
 
 xpath 를 알고 싶다면 하이라이팅 된 html 코드에 우클릭 > Copy > Copy Xpath 를 선택하면 자동으로 클립보드에 복사가 된다.   
 
 이런식으로 로그인을 시도하면   
-![Alt text](/assets/img/posting/macroblock.png)
+![Alt text](/assets/img/posting/macroblock.PNG)
 <br/>
 
 어이쿠 이런 매크로 방지 페이지가 나와버린다
@@ -130,7 +130,7 @@ driver.find_element_by_xpath('//*[@id="log.login"]').click()
 
 이렇게 바꿔주면 로그인까지는 제대로 진행이 가능하다.
 
-![Alt text](/assets/img/posting/cafemain.png)
+![Alt text](/assets/img/posting/cafemain.PNG)
 <br/>
 
 테스트를 위해 임의로 제작한 카페이다. 여기를 통해서 여러가지 테스트를 해보고자 한다..   
