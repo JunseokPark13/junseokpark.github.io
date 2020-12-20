@@ -14,10 +14,8 @@ plugins:
 
 tagline: Newb Programmer  # it will display as the sub-title
 
-description: >-                        # used by seo meta and the atom feed
-  A minimal, portfolio, sidebar,
-  bootstrap Jekyll theme with responsive web design
-  and focuses on text presentation.
+description:                        # used by seo meta and the atom feed
+
 
 # fill in the base hostname & protocol for your site, e.g., 'https://username.github.io'
 url: 'https://Suppplier.github.io'
@@ -33,7 +31,7 @@ twitter:
   username: twitter_username            # change to your twitter username
 
 social:
-  name: your_full_name                  # it will shows as the copyright owner in Footer
+  name: Junseok Park                  # it will shows as the copyright owner in Footer
   email: ziho2463@naver.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
