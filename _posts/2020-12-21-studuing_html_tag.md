@@ -1,5 +1,5 @@
 ---
-title: '[HTML] HTML 태그들'
+title: '[HTML] HTML 태그들 - 1'
 author: Bandito
 date: 2020-12-21 20:40:00 +0900
 categories: [Study, HTML]
@@ -8,9 +8,18 @@ toc: false
 comment: true
 ---
 
-# HTML 태그들
+# HTML 태그들 - 1
 
 프론트엔드를 공부하면서 햇갈리거나 자주 까먹는 태그들을 정리
+
++ 이 문서에 있는 태그 목록
+    - [img](#img)
+    - [ul, ol, li](#ul-ol-li)
+    - [iframe](#iframe)
+    - [table](#table)
+    - [label](#label)
+    - [meta](#meta)
+
 <br />
 
 ## img
@@ -26,7 +35,7 @@ comment: true
 
 <br />
 
-## ul, ol 
+## ul ol li
 ***
 ```html
 <ul> <!-- 순서가 없는 리스트 -->
@@ -49,39 +58,24 @@ comment: true
 ## iframe
 ***
 ```html
-<iframe src="불러올 페이지 주소" scrolling="스크롤링 허용여부">
+<iframe src="불러올 페이지 주소" scrolling="스크롤링 허용여부" sandbox>
      iframe 미지원 시 출력될 텍스트
 </iframe>
 ```
 + src : 불러올 페이지의 주소
 + scrolling : 아이프레임 안에서 스크롤링을 허용할 것인지를 지정함
- - auto : 스크롤이 필요한 경우에만 스크롤 바 노출 (defualt)
- - yes : 스크롤링 허용. 스크롤 바 무조건 노출
- - no : 스크롤 하지 않음 
+    - auto : 스크롤이 필요한 경우에만 스크롤 바 노출 (defualt)
+    - yes : 스크롤링 허용. 스크롤 바 무조건 노출
+    - no : 스크롤 하지 않음 
++ sandbox : iframe에서 폼이나 자바스크립트가 실행되지 못하게 함
+    - allow-forms : 폼 실행 허용
+    - allow-same : origin이 같은 도메인의 리소스 이용 가능
+    - allow-scripts : 스크립트 실행 어용 
 
 width, height, framborder(프레임 테두리 사용 여부) 등의 속성이 있지만, CSS 를 사용하는 것이 권장됨
 
-<br />
+iframe은 외부의 페이지를 불러오는 태그이므로 신뢰할 수 없는 소스를 가져올 경우 위험할 수 있다.
 
-## 이스케이핑
-```html
-<html>
-    <body>
-        <br />은 줄바꿈을 의미하는 태그입니다.
-        &lt;br /&gt;은 줄바꿈을 의미하는 태그입니다.
-    </body>
-</html>
-```
-html과 관련된 코드를 직접 출력하기 위한 방식
-
-+ &amp;amp; &nbsp; -> &nbsp; & 
-+ &amp;lt; &nbsp; -> &nbsp; <
-+ &amp;gt; &nbsp; -> &nbsp; >
-+ &amp;quot; &nbsp; -> &nbsp; "
-+ &amp;apos; &nbsp; -> &nbsp; '
-
-- <http://www.htmlescape.net/htmlescape_tool.html>    
-  원하는 코드에 대한 이스케이핑을 쉽게 알려주는 사이트
 
 <br />
 
@@ -167,51 +161,6 @@ html과 관련된 코드를 직접 출력하기 위한 방식
 - cellpadding : 셀-경계선 사이 여백
 - cellspacing : 셀-셀 사이 여백
 
-<br />
-
-## select
-***
-```html
-<form action="값을 넘길 주소">
-    <select name="넘어갈 데이터 이름">
-        <option value="넘어갈 데이터1"> 값1 </option>
-        <option value="넘어갈 데이터2" selected="selected"> 값2 </option>
-        <option value="넘어갈 데이터3"> 값3 </option>
-        <optgroup label="그룹 이름">
-            <option value="넘어갈 데이터4-1"> 값4-1 </option>
-            <option value="넘어갈 데이터4-2"> 값4-2 </option>
-        </optgroup>
-        
-    </select>
-    <input type="submit">
-</form>
-```
-<form action="값을 넘길 주소">
-    <select name="넘어갈 데이터 이름">
-        <option value="넘어갈 데이터1"> 값1 </option>
-        <option value="넘어갈 데이터2" selected="selected"> 값2 </option>
-        <option value="넘어갈 데이터3"> 값3 </option>
-        <optgroup label="그룹 이름">
-            <option value="넘어갈 데이터4-1"> 값4-1 </option>
-            <option value="넘어갈 데이터4-2"> 값4-2 </option>
-        </optgroup>       
-    </select>
-    <input type="submit">
-</form>
-
-셀렉트 박스 요소를 위한 코드
-
-+ form : select, input과 같은 태그들의 값을 넘길 때의 목표 주소 및 범위 지정
-+ select : option 태그들을 묶어 셀렉트 박스를 생성
-    - form : 값을 보낼 form id를 지정
-    - multiple : 여러 옵션을 선택 가능 (ctrl 키로 다중선택)
-    - name : 이 요소의 이름 지정
-    - required : 반드시 목록 중 하나를 선택해야 함
-    - size : 한번에 보일 옵션의 개수
-+ option : 셀렉트 박스에서 선택될 요소들
-    - value : 선택 시 실질적으로 넘어가는 데이터
-    - selected : 해당 요소가 기본값으로 설정됨
-+ optgroup : 하위 요소로 구분하기 위한 분류 태그
 
 <br />
 
@@ -244,37 +193,6 @@ html과 관련된 코드를 직접 출력하기 위한 방식
 
 &lt;label&gt; 내의 for와 input 내의 id를 일치 시키거나 &lt;label&gt; 로 태그를 감싸주면 적용됨
 
-<br />
-
-## form
-***
-```html
-<form action="목적지 주소" method="http방식 지정" enctype="넘기는 content 타입 지정">
-    <p> 아이디 : <input type="text" name="id"></p>
-    <p> 비밀번호 : <input type="password" name="pw"></p>
-    <p><input type="submit" value="Submit"></p>
-</form>
-```
-<form action="url" method="post" enctype="multipart/form-data">
-    <p> 아이디 : <input type="text" name="id"></p>
-    <p> 비밀번호 : <input type="password" name="pw"></p>
-    <p><input type="file" name="profile"></p>
-</form>
-<br/>
-
-+ form : 웹 페이지의 정보를 다른 페이지로 전송하는 역할. input 태그의 정보를 넘김
-    - action : 데이터를 보내는 목적지 주소
-    - enctype : 넘기는 Content 타입 지정. 주로 파일을 넘길때 multipart/form-data 으로 지정
-    - method : 폼을 서버로 전송하는 http 방식 지정. POST, GET 존재함
-        + get : url 뒤에 input 박스 내용이 노출됨
-        + post : input 박스 내용이 노출되지 않음 
-    - name : 폼을 식별하기 위한 이름 지정
-    - target : action 에서 지정한 페이지를 여는 방식
-        + _self : 현재 페이지에서 작동
-        + _blank : 새로운 페이지에서 작동
-
-<br />
-
 ## meta
 ***
 ```html
@@ -298,47 +216,6 @@ html과 관련된 코드를 직접 출력하기 위한 방식
     - refresh : 문서 새로고침 간격 (사용이 권장되지 않음)
     - default-style : 사용할 선호된 스타일 시트 
 
-<br />
-
-## 의미론적 태그 
-***
-```html
-<html>
-  <head>
-    <title>My Blog</title>
-  </head>
-
-  <body>
-    <header> Header </header>
-    <nav>
-      <ul>
-        <li> nav 1</li>
-        <li> nav 2</li>
-        <li> nav 3</li>
-      </ul>
-    </nav>
-    <section>
-      <aritcle>
-        의미론적 태그는 실제로 코드에 어떠한 작용을 하진 않는다.
-      </aritcle>
-      <aritcle>
-        문서의 정보를 보다 잘 표현하기 위해 의미에 맞는 태그를 사용할 뿐이다.
-      </aritcle>
-    </section>
-    <footer> footer </footer>
-  </body>
-</html>
-```
-
-의미론적 태그는 실제로 어떠한 기능을 하는 것은 아니지만, html 코드들을 좀 더 잘 분류하고 분명한 의미 부여를 위해 사용한다.
-
-+ article : 본문
-+ aside : 광고와 같은, 페이지에 내용과 관계가 적은 내용들
-+ details : 기본적으로 화면에 표시되지 않는 정보들
-+ header : 화면 상단에 위치하는 사이트나 문서의 전체적 정보
-+ footer : 화면 하단에 위치하는 사이트나 문서의 전체적 정보
-+ nave : 문서의 네비게이션 항목들 정의
-+ section : 문서의 구획들을 정의
 
 
 
