@@ -200,6 +200,12 @@ iframe은 외부의 페이지를 불러오는 태그이므로 신뢰할 수 없�
     <meta charset="utf-8">
     <meta name="속성명" content="내용">
     <meta http-equiv="속성명" content="내용">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="페이지 제목">
+    <meta property="og:description" content="페이지 설명">
+    <meta property="og:image" content="이미지 주소">
+    <meta property="og:url" content="페이지 주소">
 </head>
 ```
 
@@ -215,6 +221,16 @@ iframe은 외부의 페이지를 불러오는 태그이므로 신뢰할 수 없�
     - content-type : 문서에 대한 문자 부호화 방식 지정
     - refresh : 문서 새로고침 간격 (사용이 권장되지 않음)
     - default-style : 사용할 선호된 스타일 시트 
++ property : 오픈그래프 설정 값 작성. 오픈그래프란 웹페이지가 소셜 미디어 또는 오픈그래프 활용 사이트로 공유 시 사용되어지는 정보
+    - og:type : 해당 페이지의 유형 
+    - og:title : 페이지 제목
+    - og:description : 페이지 설명
+    - og:image : 보여줄 이미지
+    - ig:url : 페이지 주소 
+
+
+오픈 그래프는 다음과 같이 적용된다 :          
+![open_graph](https://drive.google.com/uc?export=view&id=17WT-alPPS_cRYNTkoVcQ8R7GbMHPMICE){: width="500" height="350"}
 
 
 
