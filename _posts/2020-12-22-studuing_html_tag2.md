@@ -1,7 +1,7 @@
 ---
 title: '[HTML] HTML 태그들 - 2'
 author: Bandito
-date: 2020-12-23 20:40:00 +0900
+date: 2020-12-22 20:40:00 +0900
 categories: [Study, HTML]
 tags: [HTML, Inflearn, FrontEnd]
 toc: false
