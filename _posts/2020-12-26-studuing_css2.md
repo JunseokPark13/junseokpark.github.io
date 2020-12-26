@@ -121,7 +121,7 @@ CSS 에서 어떠한 태그에 설정을 할 때, 상위 태그에 설정한 옵
 
 하지만 모든 CSS 속성에 대해 상속이 이루어지는 것은 아니다.    
 
-[W3 Full property table](#https://www.w3.org/TR/CSS21/propidx.html){: target="_blank"}에 나오는 표 중 Inherited 열을 보면 해당 속성이 하위 태그에 상속되는지 여부를 알 수 있다. 
+
 
 <br/>
 
