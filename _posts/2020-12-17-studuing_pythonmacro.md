@@ -4,7 +4,6 @@ author: Bandito
 date: 2020-12-17 20:40:00 +0900
 categories: [Study, Python]
 tags: [Python, toy]
-toc: false
 comment: true
 ---
 

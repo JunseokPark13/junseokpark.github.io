@@ -4,7 +4,6 @@ author: Bandito
 date: 2020-12-17 13:40:00 +0900
 categories: [Study, Python]
 tags: [Python, Inflearn]
-toc: false
 comment: true
 ---
 

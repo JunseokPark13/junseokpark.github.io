@@ -4,7 +4,6 @@ author: Bandito
 date: 2020-12-26 18:40:00 +0900
 categories: [Study, CSS]
 tags: [CSS, HTML, FrontEnd]
-toc: false
 comment: true
 ---
 
@@ -17,7 +16,7 @@ comment: true
     - [text-align](#text-align)
     - [font](#font)
     - [Inheritance](#inheritance)
-    - [Cascading](#cascading)
+    - [Selecter Cascading](#selecter-cascading)
 
 <br/>
 
@@ -112,7 +111,7 @@ rem 은 브라우저 설정의 font-size 설정을 따라 상대적으로 변화
 
 <br/>
 
-## inheritance
+## Inheritance
 
 CSS 에서 어떠한 태그에 설정을 할 때, 상위 태그에 설정한 옵션이 하위 태그까지 영향을 미치는 경우가 있다. 이를 상속이라고 한다.    
 
@@ -125,7 +124,7 @@ CSS 에서 어떠한 태그에 설정을 할 때, 상위 태그에 설정한 옵
 
 <br/>
 
-## cascading
+## Selecter Cascading
 ```html
 <style>
     li{color:red;}
