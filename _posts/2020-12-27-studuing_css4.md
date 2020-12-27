@@ -44,7 +44,7 @@ Mediaquery는 여러 휴대 기기의 환경에 따라 변화할 수 있는 옵�
 
 간단한 예시로 최대 길이가 몇 이상, 이하일 때 속성들이 달라지는 옵션을 부여할 수 있다.
 
-[w3s Media Rule](#https://www.w3schools.com/cssref/css3_pr_mediaquery.asp){: target="_blank"}의 사이트를 통해 Mediaquery에서 사용할 수 있는 다양한 속성을 확인할 수 있다.
+[w3s Media Rule](https://www.w3schools.com/cssref/css3_pr_mediaquery.asp){: target="_blank"}의 사이트를 통해 Mediaquery에서 사용할 수 있는 다양한 속성을 확인할 수 있다.
 
 <br/>
 
