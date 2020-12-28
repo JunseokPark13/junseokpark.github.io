@@ -17,8 +17,10 @@ description: 'asdsadasd'
     - [Float & Clear](#float--clear)
     - [Multi Column](#multi-column)
     - [Background](#background)
+    - [Transition](#Transition)
     - [Filter](#filter)
     - [Blend](#blend)
+    - [Transform](#Transform)
 
 
 <br/>
