@@ -21,6 +21,7 @@ comment: true
 <br/>
 
 ## font-size
+***
 ```html
 <style>
     #forpx{
@@ -47,6 +48,7 @@ rem 은 브라우저 설정의 font-size 설정을 따라 상대적으로 변화
 <br/>
 
 ## text-align
+***
 ```html
 <style>
     #a1{ text-align:left;}
@@ -66,6 +68,7 @@ rem 은 브라우저 설정의 font-size 설정을 따라 상대적으로 변화
 <br/>
 
 ## font
+***
 ```html
 <style>
     #a1{ 
@@ -98,6 +101,8 @@ rem 은 브라우저 설정의 font-size 설정을 따라 상대적으로 변화
 
 
 #### + 웹 폰트 사용하는 방법 
+***
+
 [Google fonts](https://fonts.google.com/){: target="_blank"} 를 사용하면 무료로 쉽게 웹 폰트를 사용이 가능하다.    
 
 원하는 폰트를 고르고 사이트에서 제공하는 코드 (&lt;link&gt; or @import)를 &lt;head&gt; 내에 포함시킨다.   
@@ -112,6 +117,7 @@ rem 은 브라우저 설정의 font-size 설정을 따라 상대적으로 변화
 <br/>
 
 ## Inheritance
+***
 
 CSS 에서 어떠한 태그에 설정을 할 때, 상위 태그에 설정한 옵션이 하위 태그까지 영향을 미치는 경우가 있다. 이를 상속이라고 한다.    
 
@@ -125,6 +131,7 @@ CSS 에서 어떠한 태그에 설정을 할 때, 상위 태그에 설정한 옵
 <br/>
 
 ## Selecter Cascading
+***
 ```html
 <style>
     li{color:red;}

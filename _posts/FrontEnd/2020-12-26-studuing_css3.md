@@ -23,6 +23,7 @@ description: 'asdsadasd'
 <br/>
 
 ## Inline & Block
+***
 ```html
 <style>
     h1,a{
@@ -56,6 +57,7 @@ description: 'asdsadasd'
 <br/>
 
 ## Box Model
+***
 ```html
 <style>
     #p1, a{
@@ -111,6 +113,7 @@ max, min 옵션은 width나 height 를 무시한다.
 <br/>
 
 ## Box Sizing
+***
 ```html
 <style>
     #p1, #p2{
@@ -137,6 +140,7 @@ max, min 옵션은 width나 height 를 무시한다.
 <br/>
 
 ## Margin Overlap
+***
 ```html
 <style>
     h1{
@@ -174,6 +178,7 @@ id가 parent인 &lt;div&gt;는 현재 100px 의 상단 마진을 갖고 있지�
 <br/>
 
 ## Position
+***
 ```html
 <style>
     div{border:1px solid red;}
@@ -233,6 +238,7 @@ position 속성은 해당 요소의 위치를 어떻게 계산할 것인지를 �
 <br/>
 
 ## Flex
+***
 ```html
 <style>
     #container{

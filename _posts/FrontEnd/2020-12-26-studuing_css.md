@@ -7,7 +7,7 @@ tags: [CSS, HTML, FrontEnd]
 comment: true
 ---
 
-# CSS 정리 
+# CSS 정리 - 1
 
 공부하면서 생소하거나 잘 모르던 내용들을 정리
 
@@ -17,9 +17,11 @@ comment: true
     - [선택자 (부모자식) - 2](#선택자-부모자식---2)
     - [가상 클래스 선택자](#가상-클래스-선택자)
 
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+<br/>
 
 ## 선택자 (id,class)
+***
 ```html
 <style>
     #아이디명{
@@ -45,6 +47,7 @@ comment: true
 <br/>
 
 ## 선택자 (부모자식) - 1
+***
 ```html
 <style>
     ul li{
@@ -81,6 +84,7 @@ comment: true
 <br/>
 
 ## 선택자 (부모자식) - 2
+***
 ```html
 <style>
     h1:first-child{
@@ -124,6 +128,7 @@ comment: true
 <br/>
 
 ## 가상 클래스 선택자
+***
 ```html
 <style>
     a:link{

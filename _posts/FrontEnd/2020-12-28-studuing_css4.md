@@ -1,7 +1,7 @@
 ---
 title: '[CSS] CSS 정리 - 4'
 author: Bandito
-date: 2020-12-27 21:10:00 +0900
+date: 2020-12-28 21:10:00 +0900
 categories: [Study, CSS]
 tags: [CSS, HTML, FrontEnd]
 comment: true
@@ -26,6 +26,7 @@ description: 'asdsadasd'
 <br/>
 
 ## Mediaquery
+***
 ```html
 <style>
     @media (max-width:600px){
@@ -55,6 +56,7 @@ Mediaquery는 여러 휴대 기기의 환경에 따라 변화할 수 있는 옵�
 <br/>
 
 ## Float & Clear
+***
 ```html
 <style>
     img{
@@ -92,6 +94,7 @@ both 는 left, right 구분 없이 float 취급을 회피한다.
 <br/>
 
 ## Multi Column
+***
 ```html
 <style>
     .column{
@@ -131,6 +134,7 @@ multi column 은 장문의 글에 신문처럼 텍스트를 열로 나누어 읽
 <br/>
 
 ## Background
+***
 ```html
 <style>
     div{
@@ -169,6 +173,7 @@ background 는 영역의 배경에 색이나 이미지를 채우기 위해 사�
 <br/>
 
 ## Transition
+***
 ```html
 <style>
     div{
@@ -203,6 +208,7 @@ transition은 요소들에 대한 효과가 변경되었을 때 이를 부드럽
 <br/>
 
 ## Filter
+***
 ```html
 <style>
     img{
@@ -238,6 +244,7 @@ transition : all 1s; 옵션은 예시에서 img:hover 가 마우스를 이미지
 <br/>
 
 ## Blend
+***
 ```html
 <style>
     .blend_image{
@@ -268,6 +275,7 @@ mix-blend-mode는 전체 배경과 특정 요소의 텍스트 간의 합성을 �
 <br/>
 
 ## Transform
+***
 
 transform 은 요소의 크기를 조절하거나 회전, 변형 등에 사용하는 속성이다.    
 
