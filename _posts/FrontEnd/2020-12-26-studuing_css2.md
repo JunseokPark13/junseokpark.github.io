@@ -32,6 +32,7 @@ comment: true
     }
 </style>
 ...
+
 <div id="forpx"> PX </div>
 <div id="forrem"> REM </div>
 ```
@@ -80,7 +81,6 @@ rem 은 브라우저 설정의 font-size 설정을 따라 상대적으로 변화
     #a2{ 
         font: 굵기 폰트크기/높이 폰트1, 폰트2, 폰트3, generic-family;
     }
-
 </style>
 ```
 
