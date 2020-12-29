@@ -15,7 +15,7 @@ description: 'asdsadasd'
 + 이 문서에 있는 내용들
     - [Link Import](#link-import)
     - [코드 경량화](#코드-경량화-minify)
-    - [Preprocessor](#Preprocessor)
+    - [Preprocessor](#preprocessor)
 
 
 
