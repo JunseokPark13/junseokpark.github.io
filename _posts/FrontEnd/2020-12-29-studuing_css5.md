@@ -61,9 +61,7 @@ css 파일을 보면 파일명.css 와 파일명.min.css 파일로 나뉘어 있
 CSS 는 필수적이지만 CSS의 코드 작성 방식이 때로는 비효율적일 수 있다.    
 이를 어느정도 해소하기 위하여 별도로 만들어진 언어를 사용하여 코드를 작성하면 이를 CSS로 변환시켜주는 도구들이 생겨났다.   
 
-[less](http://lesscss.org/){:target="_blank"},    
-[Sass](https://sass-lang.com/){:target="_blank"},     
-[stylus](https://stylus-lang.com/){:target="_blank"}   
+[less](http://lesscss.org/){:target="_blank"}, [Sass](https://sass-lang.com/){:target="_blank"}, [stylus](https://stylus-lang.com/){:target="_blank"}   
 
 위 사이트들은 CSS preprocessor 에 대해 소개하고 설명하는 사이트들이다.   대부분 Node.js의 설치를 필요로 하며, 각 언어에 대한 프로그램을 설치하고 문법에 맞게 코드를 작성하면 이를 손쉽게 CSS 코드로 변경시켜 저장해준다.   
 
