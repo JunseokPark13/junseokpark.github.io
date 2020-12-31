@@ -1,7 +1,7 @@
 ---
 title: '[Javascript] Javascript 정리 - 1'
 author: Bandito
-date: 2020-12-29 14:00:00 +0900
+date: 2020-12-29 20:35:00 +0900
 categories: [Study, Javascript]
 tags: [Javascript, HTML, FrontEnd]
 comment: true
@@ -15,6 +15,8 @@ description: 'asdsadasd'
 + 이 문서에 있는 내용들
     - [정규 표현식](#정규-표현식)
     - [배열 함수](#배열-함수)
+    - [Callback 함수](#callback-함수)
+    - [클로저](#클로저)
 
 
 <br/>
@@ -167,10 +169,94 @@ a ,b 를 비교한다고 했을 때 a-b 가 음수이면 a&gt;b, 양수이면 a&
 
 이렇게 sort 메소드의 매개변수에 sortNumber와 같은 함수를 전달하여 sortNumber가 수행되는 것을 callback 이라고 한다. 
  
+<br/>
+
+## 클로저  
+***
+
+callback 함수에서도 언급했듯이 javascript 에서는 함수 안에 또 다른 함수를 선언할 수 있다. 
+
+```html
+<script>
+function outter(){
+    var title = 'Wow'; 
+    return function(){
+        alert(title);
+    }
+}
+inner = outter();
+inner();
+</script>
+```
+
+위 코드를 실행시키면 경고창으로 'Wow' 라고 출력된다.   
+   
+5번째 줄의 alter(title)은 자신이 속한 중괄호 내에 title이라는 변수가 없다는 것을 확인하고 외부함수인 outter에서 title을 찾아 사용한다.   
+
+일반적으로 생각하면 return 시 outter 함수의 title 변수는 함수가 종료되었으므로 이미 사라졌다고 생각할 수 있다. 이는 클로저의 독특한 특성이라고 할 수 있다.   
+
+각 함수들은 자신이 사용할 수 변수를 체크하는 scope 라는 개념을 갖고 있다. 
+1. alert이 속한 중괄호 scope 에는 사용할 수 있는 변수가 없고   
+2. 외부 함수인 outter의 scope 에는 var 자료형의 title 변수가 존재한다.
+
+내부에 있는 함수들은 자신이 사용할려는 변수가 자신의 scope에 존재하지 않는다면 바깥 외부함수로 탐지 scope 를 변경하면서 사용할려는 변수가 있는지를 확인하는 과정을 거친다.   
+
+이러한 scope 는 함수가 종료되어도 참조할 수 있는 상태로 남아있기 때문에 outter의 return 이후에 실행되는 alert 이라 하더라도 outter의 title을 찾아 사용할 수 있는 것이다.   
+
+```html
+<script>
+function factory_movie(title){
+    return {
+        get_title : function (){
+            return title;
+        },
+        set_title : function(_title){
+            title = _title
+        }
+    }
+}
+ghost = factory_movie('Ghost in the shell');
+matrix = factory_movie('Matrix');
+</script>
+```
+
+클로저는 위와 같은 코드로 사용할 수도 있다.   
+
+factory_movie 의 메소드인 get_title은 title을 반환, set_title은 인자를 통해 title을 변경하는 역할을 수행한다.   
+
+ghost와 matrix 는 서로 다른 인자를 가진 factory_movie가 지정되었고, 이는 두 변수가 서로 다른 scope 를 만들었다고 할 수 있다.   
+
+또한 사용자는 factory_movive를 통해 만들어진 객체의 set_title이나 get_title을 통하지 않고서는 임의로 title을 확인하거나 변경할 수 없는 상태가 된다. 이는 일종의 Private 변수를 사용하는 것 처럼 활용할 수 있다.    
+
+```html
+<script>
+var arr = []
+    for(var i = 0; i < 5; i++){     // 1
+        arr[i] = function(){
+            return i;
+        }
+    }
+    for(var index in arr) {         // 2
+        console.log(arr[index]());
+    }
+</script>
+```
+
+위 코드에서 우리는 log에 0, 1, 2, 3, 4 가 출력될 것으로 예상할 수 있다.  
+하지만 코드에서는 5, 5, 5, 5, 5 가 출력되게 된다. 그 이유는 scope에 있다.   
+
+반복문이 진행되면 각 arr[i]에 대입되는 function에 대한 scope가 생성된다.    하지만 이 scope 는 빈 상태로, return i를 위해서는 바깥에 있는 1번 for문에 대한 scope를 확인해야 한다.   
+
+문제는 arr[i]의 scope가 생성되는 동시에 console.log(arr[index]()); 가 수행되지 않는다는 점이다.   
+
+반복문이 종료됨에 따라 1번 for문 scope 내의 i는 5가 되어있는 상태이다.   
+이 상황에서 2번 for문이 arr을 참조하게 되면 arr의 scope 는 1번 for문 scope의 i를 참조하게 되고, 결국 5만 출력되는 것이다.    
+
+이를 해결하기 위해선 i를 var 가 아닌 let 으로 선언하면 된다. 
+
+let은 for문의 내부 함수에 대해서 각 경우의 scope를 생성하기 때문에 증가하는 i값에 따른 scope로 0, 1, 2, 3, 4 가 출력되는 것을 알 수 있다. 
 
 
-<br/><br/><br/>
-추후 추가 포스팅 예정....
 
 
 <br/><br/><br/>
