@@ -261,4 +261,4 @@ let은 for문의 내부 함수에 대해서 각 경우의 scope를 생성하기 
 
 <br/><br/><br/>
 _참고한 글이나 영상 :_   
-_<https://opentutorials.org/course/1375>_   
+_<https://opentutorials.org/course/743>_   

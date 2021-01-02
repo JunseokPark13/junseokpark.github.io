@@ -1,7 +1,7 @@
 ---
 title: '[Javascript] Javascript 정리 - 2'
 author: Bandito
-date: 2020-12-31 16:40:00 +0900
+date: 2021-01-01 20:40:00 +0900
 categories: [Study, Javascript]
 tags: [Javascript, HTML, FrontEnd]
 comment: true
@@ -16,6 +16,7 @@ description: 'asdsadasd'
     - [Arguments](#arguments)
     - [Call & Apply](#call--apply)
     - [Inheritance & Prototype](#inheritance--prototype)
+    - [Standard Built-in Object](#standard-built-in-object)
 
 
 
@@ -141,6 +142,7 @@ Person.prototype.introduce = function(){
 
 결국 Prototype 에 속성을 추가한다는 것은 해당 함수를 통해 만들어질 객체의 틀을 구성하는 것과 같다고 할 수 있을 것 같다.   
 
+
 ```html
 <script>
     function Ultra(){}
@@ -172,13 +174,67 @@ Sub() 은 Super() 를 상속받고, Super() 는 Ultra()를 상속받는다.
 
 
 
+<br/>
+
+## Standard Built-in Object
+***
+
+자바 스크립트에서 지원하는 표준 내장 객체에는 여러가지가 있다.    
+Object, Functiom, Array, String, Boolean 등이 표준 내장 객체에 포함되며, 이는 프로그래밍을 위한 기본적인 도구들로 사용된다.   
+
+[Mozilla Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects) 에서 이러한 표준 내장 객체의 정보들을 알아볼 수 있다.   
+
+이러한 표준 내장 객체에는 다양한 기본 메소드들이 존재한다.  
+이 중 객체명.prototype.메소드명() 으로 구현되어있는 메소드들의 경우    
+**생성한 객체.메소드명()** 으로 사용할 수 있고   
+객체명.메소드명() 으로 구현되어있는 메소드들의 경우    
+**객체명.메소드명(생성한 객체)** 으로 사용할 수 있다. 
+
+위에서 언급했던 prototype 을 사용하면 표준 내장 객체에도 새로운 메소드를 추가하거나 수정할 수 있다. 
+
+```html
+<script>
+Array.prototype.randomval = function(){
+    var index = Math.floor(this.length*Math.random());
+    return this[index];
+}
+var arr = new Array('A', 'B', 'C', 'D', 'E');
+console.log(arr.randomval());
+</script>
+```
+
+위 코드처럼 prototype에 새로운 메소드를 정의하여 배열에 포함된 랜덤 값을 출력하는 randomval 메소드를 사용할 수 있다.   
+
+하지만 표준 내장 객체에 메소드를 추가하는 것은 위험할 수 있다. 
+
+```html
+<script>
+var a = ['A', 'B', 'C'];
+Array.prototype.r1 = function(){ var r1;};
+Array.prototype.r2 = function(){ var r2;};
+
+for(var num in a){
+    console.log(a[num]);
+}
+</script>
+```
+
+위 코드에서 우리는 로그에 A, B, C 가 출력되기를 기대할 수 있다. 하지만 출력 결과는 다음과 같다.   
+
+```
+A
+B
+C
+f (){var r1;}
+f (){var r2;}
+```
+
+물론 이는 로그를 출력하는 반복문 내에 a.hasOwnProperty(num) 을 사용한 조건문을 추가하여 prototype 으로 생성된 메소드들을 무시하고 출력할 수 있다.   
+
+하지만 이처럼 임의로 추가한 메소드가 결과에 영향을 끼칠 수 있다는 사실을 잘 인지하여 코드에 대한 정확한 파악 후 사용하여야 한다.   
 
 
-
-
-<br/><br/><br/>
-추후 추가 포스팅 예정 
 
 <br/><br/><br/>
 _참고한 글이나 영상 :_   
-_<https://opentutorials.org/course/1375>_   
+_<https://opentutorials.org/course/743>_   
