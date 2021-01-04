@@ -191,30 +191,26 @@ javascript 에서는 html의 요소를 선택하여 값을 변경할 수 있다.
 + querySelector : 특정 대상을 선택하지만 css의 선택자를 사용할 수 있다. 단일 객체를 저장한다.
 + querySelectorAll : css의 선택자를 사용하여 여러 객체를 저장할 수 있다.
 
+어떠한 태그 내에 위치하는 내부 태그들을 선택하고 싶을때는 순서대로 메서드를 사용하여 찾아나갈 수 있다.     
 
-어떠한 태그 내에 위치하는 내부 태그들을 선택하고 싶을때는 순서대로 메서드를 사용하여 찾아나갈 수 있다.   
+jQuery 에서도 querySelector 와 유사한 사용법이 가능하다. 
 
-
-
-
-
-
-
-
-
-
-<br/>
-
-## X
-***
 ```html
 <script>
+    $('li').css('color','red');
+    $('#eId').css('color','red');
+    $('.eclass').css('color','red').css('textDecoration','underline');
 </script>
 ```
 
+css 선택자를 사용하여 대상을 선택 가능하고, 여러 개의 옵션을 순차적으로 부여할 수도 있다.   
 
-<br/><br/><br/>
-추후 추가 포스팅 예정 
+
+
+
+
+
+
 
 <br/><br/><br/>
 _참고한 글이나 영상 :_   
