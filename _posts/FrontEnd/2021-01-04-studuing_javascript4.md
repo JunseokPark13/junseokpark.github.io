@@ -61,7 +61,8 @@ getElement~ 와 같은 메소드로 요소를 찾을 때, 단일 대상에 대�
 ## Element API
 ***
 
-### 식별자 API
+### 식별 API
+
 ```html
 <ul>
     <li>A</li>
