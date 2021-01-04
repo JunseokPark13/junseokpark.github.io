@@ -13,7 +13,7 @@ description: 'asdsadasd'
 공부하면서 생소하거나 잘 모르던 내용들을 정리
 
 + 이 문서에 있는 내용들
-    - [HTMLElement & HTMLCollection](#HTMLElement--HTMLCollection)
+    - [HTMLElement & HTMLCollection](#htmlelement--htmlcollection)
     - [Element API](#element-api)
         + [식별 API](#식별-api)
         + [조회 API](#조회-api)
