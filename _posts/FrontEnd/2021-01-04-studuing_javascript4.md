@@ -192,20 +192,6 @@ Element 객체를 다루기 위한 각종 메소드들 중 속성에 관련된 A
 
 
 
-
-<br/>
-
-## X
-***
-```html
-<script>
-</script>
-```
-
-
-<br/><br/><br/>
-추후 추가 포스팅 예정 
-
 <br/><br/><br/>
 _참고한 글이나 영상 :_   
 _<https://opentutorials.org/course/1375>_   
