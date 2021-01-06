@@ -1,7 +1,7 @@
 ---
 title: '[Javascript] Javascript 정리 - 5'
 author: Bandito
-date: 2021-01-05 12:00:00 +0900
+date: 2021-01-05 21:00:00 +0900
 categories: [Study, Javascript]
 tags: [Javascript, HTML, FrontEnd]
 comment: true
@@ -17,6 +17,9 @@ description: 'asdsadasd'
         + [관계 관련 API](#관계-관련-api)
         + [종류 관련 API](#종류-관련-api)
         + [변경 관련 API](#변경-관련-api)
+        + [문자열 노드 제어](#문자열-노드-제어)
+    - [Text 객체](#text-객체)
+    - [문서 요소들의 위치와 크기 파악](#문서-요소들의-위치와-크기-파악)
 
 
 
@@ -194,22 +197,38 @@ Text 객체는 텍스트 노드에 대한 DOM 객체로, CharacterData 를 상�
 + replaceData(start, end, value) : 타겟 노드의 start 부터 end 까지의 값 대신 value 를 추가한다.
 + substringData(strat, end) : 타겟 노드의 start 부터 end 까지의 값을 추출하여 반환한다.
 
-
-
-
-
 <br/>
 
-## X
+## 문서 요소들의 위치와 크기 파악
 ***
+
+자바스크립트를 이용하여 문서 내 요소들의 위치와 크기를 알아낼 수 있다.   
+
+문서는 고정된 크기를 갖고 있지만 사용자가 보는 문서의 부분은 더 작거나 계속 달라질 수 있다. 이렇게 사용자가 문서를 보고 있는 영역을 viewport 라고 한다. 
+
 ```html
+<div id="target">Code</div>
 <script>
+    var t = document.getElementById('target');
+    console.log(t.getBoundingClientRect());
+    console.log(t.offsetParent);
+    console.log('clientWidth:', t.clientWidth, 'clientHeight:', t.clientHeight);
+    console.log('window.innerWidth : ' , window.innerWidth,
+             'window.innerHeight : ', window.innerHeight);
+    console.log('screen.width : ', screen.width, 
+            'screen.height : ' , screen.height);
 </script>
 ```
 
+![domtree](https://drive.google.com/uc?export=view&id=1zal0cOzyePZsTO2rVMV233IvBM8iMGRB)
 
-<br/><br/><br/>
-추후 추가 포스팅 예정 
++ getBoundingClientRect : 지정한 타겟의 위치, 크기 정보를 반환한다. 위 사진처럼 출력된다.
++ offsetParent : 지정한 타겟의 기준이 되는 부모 요소를 반환한다.
++ clientWidth, clientHeight : border를 제외한 요소 크기를 반환한다.
++ window.innerWidth, innerHeight : 현재 사용자가 보고 있는 viewport 의 가로, 세로 길이를 반환한다.
++ screen.height, width : 사용자가 사용하고 있는 모니터의 가로, 세로 길이를 반환한다.
+
+getBoundingClientRect 는 이러한 viewport 를 기준으로 top, bottom, left, right 값을 출력하고 있다는 사실을 알 수 있다.   
 
 <br/><br/><br/>
 _참고한 글이나 영상 :_   
