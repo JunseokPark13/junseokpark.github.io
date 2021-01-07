@@ -13,7 +13,7 @@ description: 'asdsadasd'
 공부하면서 생소하거나 잘 모르던 내용들을 정리
 
 + 이 문서에 있는 내용들
-    - [이벤트 타입 - Form](#이벤트-타입--form)
+    - [이벤트 타입 - Form](#이벤트-타입---form)
         + [submit](#submit)
         + [change](#change)
         + [blur, focus](#blurfocus)
