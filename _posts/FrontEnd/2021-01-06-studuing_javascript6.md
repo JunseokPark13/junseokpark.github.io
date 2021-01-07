@@ -186,21 +186,6 @@ Property 방식의 경우 Inline과 유사하지만 동작 코드를 분리하�
 addEventListener 방식의 경우 해당 객체의 event 메소드 중 preventDefualt()를 사용하여 동작을 취소할 수 있다.   
 
 
-<br/>
-
-## X
-***
-```html
-<script>
-
-</script>
-```
-
-
-
-
-<br/><br/><br/>
-추후 추가 포스팅 예정 
 
 <br/><br/><br/>
 _참고한 글이나 영상 :_   
