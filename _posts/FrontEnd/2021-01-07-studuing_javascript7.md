@@ -16,7 +16,7 @@ description: 'asdsadasd'
     - [이벤트 타입 - Form](#이벤트-타입---form)
         + [submit](#submit)
         + [change](#change)
-        + [blur, focus](#blurfocus)
+        + [blur, focus](#blur-focus)
     - [문서 로딩](#문서-로딩)
     - [마우스 이벤트](#마우스-이벤트)
 
