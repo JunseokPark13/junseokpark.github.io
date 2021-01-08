@@ -1,7 +1,7 @@
 ---
 title: '[Javascript] Javascript 정리 - 8'
 author: Bandito
-date: 2021-01-07 12:00:00 +0900
+date: 2021-01-08 12:00:00 +0900
 categories: [Study, Javascript]
 tags: [Javascript, HTML, FrontEnd]
 comment: true
@@ -14,6 +14,7 @@ description: 'asdsadasd'
 
 + 이 문서에 있는 내용들
     - [Ajax](#ajax)
+    - [JSON](#json)
 
 
 
@@ -107,6 +108,49 @@ echo $d1->format($_POST['format']);
 setRequestHeader 메소드를 사용하여 전송할 데이터 타입의 형식(MIME)을 지정하고 서버로 전송할 데이터를 형식에 맞게 만든다. 형식은 이름=값&이름=값&.. 의 형식을 따른다.   
 
 이후 send 메소드의 인자로 만든 형식을 삽입하면 데이터가 전송된다.   
+
+## JSON
+***
+
+JSON 은 Javascript Object Notion의 약자로, 자바스크립트에서 객체를 만들 때 사용하는 표현식을 의미한다. 이는 사람과 기계가 이해하기 쉽고 데이터의 용량이 작다.   
+
+![json_obj](https://drive.google.com/uc?export=view&id=16EackveCLRcEnkvEiPPTcA-1XtJlyL12)   
+![json_ary](https://drive.google.com/uc?export=view&id=1FcX06mbA_5o9G0eaJ79bKUkdbEl1P3Kf)
+
+
+위 두 사진은 [JSON 공식 홈페이지](http://www.json.org/json-ko.html){:target="_blank"} 에서 제공하는 JSON 의 Object 와 Array 의 형태이다. 
+
+위 사진에서 Object 는 { 로 시작하고 } 로 끝나며, 내부의 값들은 'string:value' 의 형태로 저장되고 ',' 로 구분됨을 알 수 있다.   
+
+Array 는 \[ 로 시작되고 \] 로 끝나며, 내부의 값들은 'value' 의 형태로 저장되고 ',' 으로 구분됨을 알 수 있다.   
+
+이는 실제 코드에서 다음과 같이 작성된다.   
+
+```html
+<script>
+    var person = {"name":"Park", "age":26, "job":"programmer"}
+    var alphabet = ["A", "B", "C", "D"];
+</script>
+```
+
+이러한 JSON 형태의 데이터는 설정의 저장이나 데이터의 전송 등에 효율적으로 사용될 수 있다. 
+
++ JSON.parse() : 인자로 전달된 문자열을 자바스크립트의 데이터로 변환
++ JSON.stringify() : 인자로 전달된 자바스크립트의 데이터를 문자열로 변환
++ json_encode() : PHP의 데이터를 JOSN 형식으로 전환해주는 php 내장 함수
++ json_decode() : JSON 형식의 문자열을 PHP 변수로 전환해주는 php 내장 함수
+
+```html
+<script>
+    var data = new Object();
+    data.timezone = document.getElementById('timezone').value;
+    data.format = document.getElementById('format').value;
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify(data));
+</script>
+```
+
+또한 데이터를 전송하기 위해 JSON 을 사용하려면 Object 형태로 생성하고 setRequestHeader 의 인자를 "application/json" 으로 설정해야 한다.
 
 
 
