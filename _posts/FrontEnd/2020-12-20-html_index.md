@@ -1,7 +1,7 @@
 ---
 title: '[HTML] HTML 정리 목록'
 author: Bandito
-date: 2021-01-09 14:00:00 +0900
+date: 2020-12-20 14:00:00 +0900
 categories: [Study, Index]
 tags: [HTML, FrontEnd, index]
 comment: true
@@ -10,14 +10,14 @@ description: 'asdsadasd'
 
 # HTML 정리 목록 
 
-+ [HTML 태그들 - 1]({% post_url 2020-12-21-studuing_html_tag %})
++ [HTML 태그들 - 1]({% post_url /FrontEnd/2020-12-21-studuing_html_tag %})
     - img
     - ul, ol, li
     - ifram
     - table
     - label
     - meta
-+ [HTML 태그들 - 2]({% post_url 2020-12-22-studuing_html_tag2 %})
++ [HTML 태그들 - 2]({% post_url /FrontEnd/2020-12-22-studuing_html_tag2 %})
     - select
     - form
     - input
@@ -25,12 +25,12 @@ description: 'asdsadasd'
     - 이스케이핑
     - 의미론적 태그
     - Can I use
-+ [HTML 태그들 - 3]({% post_url 2020-12-23-studuing_html_tag3 %})
++ [HTML 태그들 - 3]({% post_url /FrontEnd/2020-12-23-studuing_html_tag3 %})
     - abbr & acronym
     - address
     - map, area
     - base
-+ [HTML 검색 엔진 최적화]({% post_url 2020-12-22-studuing_html_searchengine %})
++ [HTML 검색 엔진 최적화]({% post_url /FrontEnd/2020-12-22-studuing_html_searchengine %})
     - 1. title 태그를 이용하여 페이지의 제목을 나타내기
     - 2. description 메타 태그 활용하기
     - 3. 페이지의 URL 구조 개선하기
