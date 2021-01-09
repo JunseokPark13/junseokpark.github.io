@@ -10,6 +10,20 @@ description: 'asdsadasd'
 
 # TensorFlow 정리 - 1
 
++ 이 문서에 있는 내용들
+    - [머신 러닝이란?](#머신-러닝이란?)
+    - [지도학습](#지도학습)
+    - [지도학습의 작업 순서](#지도학습의-작업-순서)
+    - [모델](#모델)
+    - [나의 모델 만들기](#나의-모델-만들기)
+        + [라이브러리 설치](#라이브러리-설치)
+        + [과거의 데이터 준비하기](#과거의-데이터-준비하기)
+        + [모델의 모양 만들기](#모델의-모양-만들기)
+        + [모델을 학습시키기](#모델을-학습시키기)
+        + [모델의 이용과 학습](#모델의-이용과-학습)
+        + [정확도 측정](#정확도-측정)
+    - [가중치와 편향](#가중치와-편향)
+
 
 Tensorflow.js 는 자바스크립트로 딥러닝을 이용할 수 있도록 돕는 라이브러리이다. 자바스크립트가 실행 가능한 모든 곳에서 실행이 가능하다. 
 
@@ -201,7 +215,6 @@ complie 메소드에는 특정 파라미터를 지정해주어야 한다.
 ```html
 <script>
     var fitParam = { epochs: 100} 
-    // var fitParam = { epochs: 100, callbacks:{onEpochEnd:function(epoch, logs){console.log('epoch', epoch, logs);}}} // loss 추가 예제
     model.fit(원인, 결과, fitParam).then(function (result) {
         ...
     });
@@ -231,12 +244,69 @@ predict 는 모델에게 원인에 대한 결과를 받아낼 수 있는 메소�
 epochs 값이 적다면 적절한 값을 출력하지 못할 수 있다. 추가적인 학습을 통하여 더 완성도 있는 결과를 낼 수 있다.   
 
 
-
+### 정확도 측정
+*** 
 
 ```html
 <script>
+    //var fitParam = { epochs: 100} 
+    var fitParam = { epochs: 100, 
+    callbacks:{onEpochEnd:function(epoch, logs)
+    {
+        console.log('epoch', epoch, logs, 'RMSES=>', Math.sqrt(logs.loss));
+    }}} 
+    
+    model.fit(원인, 결과, fitParam).then(function (result) {
+        ...
+    });
 </script>
 ```
+```console
+...
+epoch 293 {loss: 5651.81787109375} RMSES=> 75.1785732179971
+epoch 294 {loss: 5648.55615234375} RMSES=> 75.15687694644949
+epoch 295 {loss: 5645.29638671875} RMSES=> 75.13518740722452
+epoch 296 {loss: 5642.037109375} RMSES=> 75.1134948552855
+epoch 297 {loss: 5638.779296875} RMSES=> 75.0918057904789
+epoch 298 {loss: 5635.5234375} RMSES=> 75.0701234679949
+```
+
+위 코드는 기존에 epochs 값만 지정했던 fitParam 에 콜백 함수를 통해 fit 메소드 작동 시 각 학습에 대한 로그를 출력하도록 하고 있다.     
+
+출력 내용을 보면 logs 는 loss 라는 프로퍼티를 가진 객체라는 것을 알 수 있다. 이 loss 는 모델의 학습 상태를 나타내는 것으로, 0에 가까울 수록 학습상태가 좋다는 것을 뜻한다.    
+
+모델은 기존에 주어진 원인과 결과를 토대로 학습을 진행한다. 충분한 학습이 이루어지지 않는다면 실제 원인에 따른 결과 값과 모델의 예측 결과 값은 차이가 있을 수 있다. 우리는 이러한 오차 수치를 파악하기 위해 이전에 다음과 같은 코드를 작성한 적이 있다. 
+
+```html
+<script>
+    var compileParam = { optimizer: tf.train.adam(), loss: tf.losses.meanSquaredError }
+</script>
+```
+
+이 코드에서 loss : tf.losses.meanSquaredError 는 
+('각 원인에 따른 결과' - '모델의 예측값')^2 의 합을 값들의 갯수만큼 나눈 것이다. 때문에 오차의 값이 작아질수록 loss 값은 0에 가까워 질 것이다. 이를 평균 제곱 오차(Mean Squared Error), 즉 MSE 라 한다.   
+하지만 loss 값은 기존의 값들을 제곱한 것이므로 여기서 제곱근을 구해준 평균 제곱근 오차(Root Mean Squared Error) RMSE 를 사용하여 더 보기 좋은 값을 얻을 수 있다.
+
+## 가중치와 편향
+***
+
+모델을 만들기 위해 사용했던 원인과 결과를 생각해보면 판매량 = 2 * 온도 라는 가정을 할 수 있었다. 이와 같이 모델은 기본적으로 y = a*x + b 라는 계산식을 갖는다.       
+여기서 a는 가중치(weight), b 는 편향(vias)이라는 이름으로 불리지만, 둘 다 합쳐서 가중치라고 불리기도 한다. 
+
+```html
+<script>
+    var weights = model.getWeights();
+    var weight = weights[0].arraySync()[0][0];
+    var vias = weights[1].arraySync()[0];
+    </script>
+```
+
+model.getWeigths() 은 2개의 값을 가진 배열을 반환하고, 이 배열 내의 값들은 tensor 객체임을 알 수 있다. 이 중 첫번째 값은 가중치, 두번째 값은 편향이다.   
+
+이를 통해 모델은 predict 메소드에서 y = weight * x + vias 를 계산한다.    
+모델이 자신만의 식을 생성하는 것은 복잡한 일이지만, predict 를 하는 것은 그다지 어려운 작업이 아니라는 사실을 알 수 있다.   
+
+
 
 
 
