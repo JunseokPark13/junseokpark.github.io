@@ -59,6 +59,19 @@ description: 'asdsadasd'
         + blur, focus
     - 문서 로딩
     - 마우스 이벤트 
++ [Javascript 정리 - 8]({% post_url /FrontEnd/2021-01-11-studuing_javascript8 %})
+    - Constructor
+    - Prototype
+    - Class
+    - \_\_proto\_\_
+    - Call & Bind
+        + Call
+        + Bind
+    - Prototype vs \_\_proto\_\_
+       
 + [Ajax 정리 - 1]({% post_url /FrontEnd/2021-01-10-studuing_ajax1 %})   
     - Ajax
+    - XMLHttpRequest API
+    - Fetch API
+    - Fragment Identifier
     - JSON

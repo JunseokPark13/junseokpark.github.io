@@ -1,5 +1,5 @@
 ---
-title: '[Javascript] Ajax 정리 - 1'
+title: '[Javascript] Ajax 정리'
 author: Bandito
 date: 2021-01-10 12:00:00 +0900
 categories: [Study, Javascript]
@@ -8,7 +8,7 @@ comment: true
 description: 'asdsadasd'
 ---
 
-# Ajax 정리 - 1
+# Ajax 정리
 
 공부하면서 생소하거나 잘 모르던 내용들을 정리
 
@@ -162,6 +162,11 @@ fetch 가 데이터를 받아오는 것은 많은 시간이 걸릴 수도 있는
 
 이를 통해 fetch 함수가 비동기적으로 수행된다는 사실을 알 수 있다. 
 
+
+###
+
+
+
 <br/>
 
 ## Fragment Identifier 
@@ -188,6 +193,18 @@ Fetch API 를 사용하여 페이지의 재접속이나 로딩 없이 새로운 
 이를 통해 #이름 과 같은 값이 URL에 추가되고 이런 변경에 따른 이벤트 핸들러가 자바스크립트를 호출하고 Ajax로 요청을 처리할 수 있다.   
 
 이렇게 생성된 주소들은 index.html#!css 와 같은 형태를 갖게 되고, 이를 공유하거나 직접 주소창에 작성하여 접속하면 해당 페이지의 ajax가 바로 실행되는 결과를 얻을 수 있다.    
+
+<br>
+
+### Polyfill
+
+fetch api 는 비교적 새로운 기능이기 때문에 이를 지원하지 않는 브라우저가 있을 수 있다.    
+이 글을 작성하고 있는 2021년 01월 11일 기준 IE 11과 Opera Mini 에서는 fetch api를 지원하지 않고 있다.   
+
+이러한 경우를 대비하여 과거의 브라우저를 사용하는 유저들도 특정 기능을 사용할 수 있도록 돕는 것이 polyfill 이다.    
+
+[Fetch API Polyfill](https://github.com/github/fetch) 과 같은 파일을 다운받아 이를 script 태그로 포함시키면 지원하지 않는 브라우저에서도 fetch api 를 사용할 수 있게 된다.   
+
 
 
 
@@ -241,17 +258,9 @@ Array 는 \[ 로 시작되고 \] 로 끝나며, 내부의 값들은 'value' 의 
 
 
 
-## X
-***
-```html
-<script>
-</script>
-```
-
-<br/><br/><br/>
-추후 추가 포스팅 예정...
 
 
 <br/><br/><br/>
 _참고한 글이나 영상 :_   
 _<https://opentutorials.org/course/1375>_   
+_<https://opentutorials.org/course/3281>_ 
