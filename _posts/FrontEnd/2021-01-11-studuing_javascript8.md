@@ -16,11 +16,11 @@ description: 'asdsadasd'
     - [Constructor](#constructor)
     - [Prototype](#prototype)
     - [Class](#class)
-    - [\_\_proto\_\_](#proto)
+    - [\_\_proto\_\_](#__proto__)
     - [Call & Bind](#call--bind)
         + [Call](#call)
         + [Bind](#bind)
-    - [Prototype vs \_\_proto\_\_](#prototype-vs-proto)
+    - [Prototype vs \_\_proto\_\_](#prototype-vs-__proto__)
 
 
 <br/>
