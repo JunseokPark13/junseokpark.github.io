@@ -1,7 +1,7 @@
 ---
 title: '[React] React 정리 - 1'
 author: Bandito
-date: 2021-01-11 12:00:00 +0900
+date: 2021-01-12 12:00:00 +0900
 categories: [Study, React]
 tags: [Javascript, HTML, FrontEnd, React]
 comment: true
