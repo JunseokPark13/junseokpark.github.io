@@ -10,7 +10,7 @@ description: 'asdsadasd'
 
 # Javascript 정리 목록 
 
-+ [Javascript 정리 - 1]({% post_url /FrontEnd/2020-12-21-studuing_html_tag %})
++ [Javascript 정리 - 1]({% post_url /FrontEnd/2020-12-30-studuing_javascript %})
     - 정규 표현식
     - 배열 함수
     - Callback 함수

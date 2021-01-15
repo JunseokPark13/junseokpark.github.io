@@ -15,6 +15,7 @@ description: 'asdsadasd'
 + 이 문서에 있는 내용들
     - [Create 기능](#create-기능)
     - [shouldComponentUpdate](#shouldcomponentupdate)
+    - [Update 기능](#update-기능)
 
 
 <br/>
@@ -31,6 +32,47 @@ description: 'asdsadasd'
 + WEB 을 누르면 하단의 Content 영역이 Welcome, Hello React!! 라는 글을 출력한다.
 + 중앙 목록 중 HTML, CSS, Javascript 를 누르면 각 항목에 대한 제목과 내용으로 하단의 Content 영역이 변경된다.
 + 하단 목록 중 create 를 누르면 Content 영역에 제목과 내용을 입력하고 제출할 수 있는 폼이 출력되고, 이 곳에 값을 입력하면 중앙에 위치한 목록에 추가되게 한다.
+
+<br/>
+
+```javascript
+// Control.js
+class Control extends Component {
+    render() {
+      console.log('Control render');
+      return (
+        <ul>
+          <li><a href="/create"
+          onClick={function(e){
+            e.preventDefault();
+            this.props.onChangeMode('create');
+          }.bind(this)}
+          >create</a></li>
+          <li><a href="/update"
+          onClick={function(e){
+            e.preventDefault();
+            this.props.onChangeMode('update');
+          }.bind(this)}
+          >update</a></li>
+          <li><input type="button" value="delete"
+          onClick={function(e){
+            e.preventDefault();
+            this.props.onChangeMode('delete');
+          }.bind(this)}
+          ></input></li>
+        </ul>
+      );
+    }
+  }
+```
+
+이후에 구현할 create, update, delete 기능을 포함한 리스트를 만드는 Control 컴포넌트를 제작하였다. 
+
+여기서 delete 만 앵커 태그가 아닌 input 태그로 작성한 이유는 만약 사용자가 이러한 앵커 링크들에 대한 작업을 미리 처리하는 환경을 사용하고 있다면 delete 기능도 앵커 태그로 작성하였을 시 의도치않게 항목들이 삭제되는 일이 일어날 수 있기 때문이다.   
+
+
+<br/>
+
 
 ```javascript
 // App.js
@@ -161,134 +203,6 @@ class TOC extends Component {
 이 메소드의 반환 값이 false 이면 컴포넌트의 render 가 호출되지 않고, true 이면 render 를 호출시킨다.   
 이를 이용하여 특정 상황에서는 render 를 호출하지 않게 하여 웹 페이지의 불필요한 render 를 줄이는 것으로 효율성을 향상시킬 수 있다.    
 
-<br/>
-
-## Update 기능   
-*** 
-
-다음은 CRUD 중 Update 에 대해 구현해보려고 한다. Update 는 Read 와 Create 를 동시에 한다고 생각하면 된다. 선택한 항목에 대한 id, title, desc 을 컴포넌트로 전달하여 input 칸에 기존의 값들이 기본적으로 삽입되어있도록 설정하고, 이를 사용자가 수정할 수 있도록 할 것이다.   
-
-그 전에 구현의 편의성을 위해 약간의 리펙토링 작업을 거치고자 한다.
-
-```javascript
-// App.js
-getReadContent(){
-    for(var i = 0; i<this.state.contents.length; i++){
-      var data = this.state.contents[i];
-      if(data.id === this.state.selected_content_id){
-        return data;
-      }
-    }
-  }
-```
-
-현재 id 와 같은 state.contents 의 값을 가져오는 반복문을 별도의 함수로 분리한 모습이다. 이를 객체에 저장하는 것으로 쉽게 값을 가져올 수 있게 되었다. 
-
-```javascript
-// App.js
- else if(this.state.mode === 'update'){
-      var _content = this.getReadContent();
-      _article = <UpdateContent
-      data={_content}
-      onUpdates={function ...
-```
-
-content 영역의 Update 기능을 위해 UpdateContent 라는 컴포넌트를 새롭게 만들었다. 이 컴포넌트에 현재 ReadContent 를 통해 선택하고 있는 state.contents 의 값을 속성으로 전달한다.
-
-```javascript
-// UpdateContent.js
-class UpdateContent extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      id:this.props.data.id,
-      title:this.props.data.title,
-      desc:this.props.data.desc
-    }
-    this.inputFormHandler = this.inputFormHandler.bind(this);
-  }
-```
-
-이전에도 언급했듯이 props 로 받아온 값들은 read-only, 즉 읽기 전용이므로 변경이 불가능하다. 이 값들을 input 태그의 value 로 삽입하여 기존의 값을 출력시키는 것은 가능하지만, 사용자가 새로운 값을 입력하고 submit 하더라도 수정은 할 수 없다는 뜻이다.    
-
-하지만 state 는 수정이 가능한 값들이다. 이를 처리하기 위해 UpdateContent 컴포넌트의 state 에 속성으로 받아온 data의 id, title, desc 값을 넣어준다.   
-
-```javascript
-// UpdateContent.js 의 render()
-<form action="/create_process" method="post"
-            onSubmit={function(e){
-              e.preventDefault();
-              //this.props.onUpdates(e.target.id.value, e.target.title.value, e.target.desc.value);
-              this.props.onUpdates(
-                this.state.id,
-                this.state.title,
-                this.state.desc
-              )
-            }.bind(this)}
-          >
-          ...
-```
-
-form 태그에서는 submit 버튼이 눌렸을 때 상위 App 컴포넌트의 onUpdates 메소드에 form 태그 내의 input 태그들에서 입력된 값들을 전달하는 코드를 작성한다.
-
-```javascript
-// UpdateContent.js
-inputFormHandler(e){
-    this.setState({[e.target.name]:e.target.value})
-  }
-```
-```javascript
-// UpdateContent.js 내의 render() 
-<input type="hidden" name="id" value={this.state.id}></input>
-            <p>Title : <input type="text" name="title" 
-            value={this.state.title} 
-            onChange={this.inputFormHandler}
-            placeholder="title!"></input></p>
-<p>Text : 
-  <textarea name="desc" 
-      value={this.state.desc}
-      onChange={this.inputFormHandler}
-      placeholder="description!"></textarea>
-</p>
-<p> <input type="submit"></input> </p>
-```
-
-inputFormHandler 함수는 UpdateContent 컴포넌트에 선언한 것이다. 이 함수는 인자로 받은 항목의 값을 state 에 반영하는 역할을 수행한다. 
-
-```javascript
-// App.js
-else if(this.state.mode === 'update'){
-      var _content = this.getReadContent();
-      _article = <UpdateContent
-      data={_content}
-      onUpdates={function(_id,_title,_desc){
-        var clone = Array.from(this.state.contents);
-        for(var i=0; i<clone.length; i++){
-          if(clone[i].id === _id){
-            clone[i] = {id:_id, title:_title, desc:_desc};
-            break;
-          }
-        }
-         this.setState({
-          contents:clone,
-          mode:'read'
-         });
-      }.bind(this)}
-      ></UpdateContent>
-```
-
-UpdateContent 컴포넌트에서 받아온 값들을 App 컴포넌트의 if 문에서 처리하는 과정이다.   
-
-이전에 언급했던 것 처럼 직접 state.contents 를 수정하는 것은 효율적이지 않을 수 있다. 때문에 contents 자체를 복사한 clone 객체를 수정한 뒤 이를 setState 로 contents에 적용하는 방법을 수행한다.   
-
-그리고 update 를 수행한 뒤에는 수정한 내용을 볼 수 있도록 mode 를 'read' 로 변경하면 수정과 동시에 수정된 내용을 ReadContent 가 불러올 수 있게 된다.
-
-
-
-
-
-<br/><br/><br/><br/>
-추후 추가 포스팅 예정 
 
 
 <br/><br/><br/>
