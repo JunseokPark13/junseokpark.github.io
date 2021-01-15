@@ -15,7 +15,6 @@ description: 'asdsadasd'
 + 이 문서에 있는 내용들
     - [Create 기능](#create-기능)
     - [shouldComponentUpdate](#shouldcomponentupdate)
-    - [Update 기능](#update-기능)
 
 
 <br/>
