@@ -1,0 +1,266 @@
+---
+title: '[BlackCoffee] Week2 - TodoList with Ajax 3'
+author: Bandito
+date: 2021-01-29 17:00:00 +0900
+categories: [Study, Black Coffee]
+tags: [Javascript, HTML, FrontEnd, Black Coffee]
+comment: true
+description: 'asdsadasd'
+---
+
+<br/>
+
+## Week2 - TodoList with Ajax 3
+***
+
+<br/>
+
+## 3. AjaxPost.js
+***
+
+<br/>
+
+### 3-1. initialize
+***
+
+```javascript
+import { currentUserID } from "./ControlUserList.js";              // 1
+import { reflectUserItems, ajaxGetFunctions } from "./AjaxGet.js"; // 2
+import { chooseButton } from "./ControlTodoButton.js";             // 3
+
+const baseurl = "https://js-todo-list-9ca3a.df.r.appspot.com/api/users"; // 4
+const userList = document.querySelector("#user-list");  // 5 
+```
+
+1. 현재 선택된 유저의 id 를 가져온다.
+
+2. 선택한 유저의 데이터로 Todo list 를 만드는 reflectUserItems, 특정 데이터를 가져오는 ajaxGetFunctions 를 가져온다.
+
+3. 선택한 버튼 혹은 url 에 따라 리스트를 갱신하는 chooseButton 를 가져온다.
+
+4. 데이터 통신을 할 때 사용할 url 의 기본 주소를 설정한다.
+
+5. 유저의 목록이 갱신될 div 요소를 지정한다.
+
+
+<br/>
+
+### 3-2. ajaxPostFunctions
+***
+```javascript
+export const ajaxPostFunctions = async (data, type) => {
+  let url = baseurl;
+  let method = "";
+  let dataset = {};
+  let option = {};
+  if (type === "username") {          // 1
+    method = "POST";
+    dataset = { name: data };
+  } else if (type === "useritem") {   // 2
+    method = "POST";
+    url += `/${currentUserID}/items/`;
+    dataset = { contents: data };
+  } else if (type === "changeitem") { // 3
+    method = "PUT";
+    let str = data.querySelector(".edit").value;
+    dataset = { contents: str };
+    url += `/${currentUserID}/items/${data.getAttribute("id")}`;
+  } else if (type === "checkitem") {    // 4
+    method = "PUT";     
+    url += `/${currentUserID}/items/${data.getAttribute("id")}/toggle`;
+  } else if (type === "prioritem") {    // 5
+    method = "PUT";
+    let tag = "NONE";
+    const span = data.querySelector("span.chip");
+    if (span.classList.contains("primary")) tag = "FIRST";
+    else if (span.classList.contains("secondary")) tag = "SECOND";
+    dataset = { priority: tag };
+    url += `/${currentUserID}/items/${data.getAttribute("id")}/priority`;
+  } else if (type === "deleteitem") {   // 6
+    method = "DELETE";
+    url += `/${currentUserID}/items/${data.getAttribute("id")}`;
+  }
+
+  if (type === "checkitem" || type === "deleteitem") {  // 7
+    option = {
+      method: method,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+  } else {                                              // 8
+    option = {
+      method: method,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dataset),
+    };
+  }
+
+  await fetch(url, option)        // 9
+    .then((data) => {
+      if (!data.ok) {
+        throw new Error(data.status);
+      }
+      return data.json();
+    })
+    .then((post) => {
+      if (type === "username") resetUserList();     // 10
+      else if (type === "useritem") assembleSingleItem(post, "add");
+      else assembleSingleItem(post, "change");
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+```
+
+서버에 데이터를 전송하는 기능들을 모아놓은 함수이다.   
+type 에 따라 서로 다른 기능을 한다.
+
+1. type 이 username 이라면 method 를 POST로하여 새로 생성하고자 하는 유저의 이름을 유저 목록에 추가한다.
+
+2. type 이 useritem 이라면 method 를 POST로하여 새로 추가한 아이템을 유저의 Todo List에 추가한다.
+
+3. type 이 changeitem 이라면 method 를 PUT으로하여 선택한 아이템의 내용을 변경한다.
+
+4. type 이 checkitem 이라면 method 를 PUT으로하여 선택한 아이템의 완료 상태를 토글한다.
+
+5. type 이 prioritem 이라면 method 를 PUT으로하여 선택한 아이템의 우선순위를 변경한다.
+
+6. type 이 deleteitem 이라면 method 를 DELETE로 하여 선택한 아이템을 삭제한다.
+
+7. type 이 checkitem 혹은 deleteitem 이라면 body 가 불필요하다.
+
+8. 아니라면 body 를 포함한 option 을 생성한다.
+
+9. url 과 option 을 토대로 fetch 메서드를 실행한다.
+
+10. type 이 username 이라면 유저 목록을 갱신한다.   
+type 이 useritem 이라면 새로운 단일 항목을 추가한다.   
+모두 아니라면 todo-list 의 항목을 변경 결과에 맞게 수정한다.
+
+
+
+<br/>
+
+### 3-3. assembleSingleItem
+***
+```javascript
+const assembleSingleItem = (useritem, type) => {
+  reflectUserItems(useritem, type);
+
+  if (/(active)/.exec(window.location.href)) chooseButton("active");
+  else if (/(completed)/.exec(window.location.href)) chooseButton("completed");
+  else chooseButton("all");
+};
+```
+
+가져온 데이터로 하나의 항목을 추가하고 url 에 따라 보이는 목록을 갱신한다.    
+
+type 이 add 라면 추가, change 라면 기존의 항목을 변경한다.
+
+
+
+<br/>
+
+### 3-4. ajaxDeleteAllItem
+***
+```javascript
+export const ajaxDeleteAllItem = async () => {
+  if (!confirm("정말로 모두 삭제하시겠습니까?")) return;  // 1
+  const option = {                                  // 2
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  const url = `${baseurl}/${currentUserID}/items/`;
+
+  await fetch(url, option)
+    .then((data) => {
+      if (!data.ok) {
+        throw new Error(data.status);
+      }
+      return data.json();
+    })
+    .then((post) => {
+      ajaxGetFunctions("useritems");    // 3
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+```
+
+현재 선택한 유저의 모든 할 일 항목을 지우는 함수이다.
+
+1. confirm 으로 실행 여부를 물어보고, true 라면 진행한다.
+
+2. method 를 DELETE 로 설정한다.
+
+3. fetch 메소드 사용 후 서버에 반영된 Todo List 를 다시 가져온다.
+
+
+<br/>
+
+### 3-5. reflectUserItems
+***
+```javascript
+export const ajaxDeleteUser = async (e) => {
+  if (!e.ctrlKey) return;                              // 1
+  if (!confirm("정말 유저를 삭제하시겠습니까?")) return; // 2
+  const option = {                                     // 3
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  const url = `${baseurl}/${e.target.getAttribute("id")}`;
+
+  await fetch(url, option)
+    .then((data) => {
+      if (!data.ok) {
+        throw new Error(data.status);
+      }
+      return data.json();
+    })
+    .then((post) => {
+      resetUserList();                                  // 4
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+```
+
+유저 목록에서 특정 유저를 삭제하는 함수이다.
+
+1. Ctrl 키를 누르지 않으면 수행되지 않는다.
+
+2. confirm 으로 실행 여부를 물어보고, true 라면 진행한다. 
+
+3. method 를 DELETE 로 설정한다.
+
+4. fetch 메소드 사용 후 서버에 반영된 유저 목록을 가져온다.
+
+<br/>
+
+### 3-6. resetUserList
+***
+```javascript
+const resetUserList = () => {
+  userList.innerHTML =
+    '<button class="ripple user-create-button">+ 유저 생성</button>'; // 1
+  ajaxGetFunctions("userlist"); // 2
+};
+```
+
+가져온 데이터에 맞게 유저 목록을 갱신하는 함수이다. 
+
+1. 유저 추가 버튼만 남기고 다른 기존의 목록은 삭제한다.
+
+2. 유저의 목록을 새로 가져온다.
