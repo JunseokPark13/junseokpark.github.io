@@ -10,7 +10,7 @@ description: 'asdsadasd'
 
 + 이 문서에 있는 내용들
     - [entries](#entries)
-    - [fromEntries](#fromEntries)
+    - [fromEntries](#fromentries)
     - [values](#values)
 
 <br/>
