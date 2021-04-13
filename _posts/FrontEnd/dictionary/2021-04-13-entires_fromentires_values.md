@@ -15,7 +15,7 @@ description: 'asdsadasd'
 
 <br/>
 
-# entires
+# entries
 ***
 
 entries 메서드는 for...in와 같은 순서로 주어진 객체 자체의 enumerable 속성 [key, value] 쌍의 배열을 반환한다.   
@@ -74,7 +74,7 @@ console.log(ary[0], ary[1], ary[2]);
 
 <br/>
 
-# fromEntires
+# fromEntries
 ***
 
 fromEntires 메서드는 키값 쌍의 목록을 객체로 바꿉니다. 
