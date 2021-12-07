@@ -22,16 +22,19 @@ comment: true
 ---
 
 ```
-We define a magic square to be an 'n x n'  matrix of distinct positive integers from '1 to n^2' where the sum of any row, column, or diagonal of length 'n' is always equal to the same number: the magic constant.
+We define a magic square to be an 'n x n' matrix of distinct positive integers from '1 to n^2' 
+where the sum of any row, column, or diagonal of length 'n' is always equal to the same number: the magic constant.
 
-You will be given a '3 x 3' matrix 's' of integers in the inclusive range [1, 9]. We can convert any digit 'a' to any other digit 'b' in the range [1,9] at cost of |a - b|. Given 's', convert it into a magic square at minimal cost. Print this cost on a new line.
+You will be given a '3 x 3' matrix 's' of integers in the inclusive range [1, 9]. 
+We can convert any digit 'a' to any other digit 'b' in the range [1,9] at cost of |a - b|. 
+Given 's', convert it into a magic square at minimal cost. Print this cost on a new line.
 ```
 
 <br>
 
 1 부터 9 까지만 들어갈 수 있는 3 x 3 마방진을 만들어야 한다.    
 
-주어진 3 x 3 배열에서 특정 값 a 를 b 로 바꾸면 이를 바꾼 비용은 |a - b| 가 된다.    
+주어진 3 x 3 배열에서 특정 값 a 를 b 로 바꾸면 이를 바꾼 비용은 `|a - b|` 가 된다.    
 
 마방진을 만들 수 있는 가장 최소 비용의 합을 구하여라
 
