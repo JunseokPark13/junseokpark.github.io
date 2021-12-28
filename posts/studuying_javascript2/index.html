@@ -1,0 +1,187 @@
+<!DOCTYPE html><html lang="en" mode="dark" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="theme" content="Chirpy v2.6.2"><meta name="generator" content="Jekyll v4.1.1" /><meta property="og:title" content="[Javascript] Javascript 정리 - 2" /><meta name="author" content="Bandito" /><meta property="og:locale" content="en_US" /><meta name="description" content="asdsadasd" /><meta property="og:description" content="asdsadasd" /><link rel="canonical" href="https://suppplier.github.io/posts/studuying_javascript2/" /><meta property="og:url" content="https://suppplier.github.io/posts/studuying_javascript2/" /><meta property="og:site_name" content="Steadily, Constantly, Consistently" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2021-01-01T20:40:00+09:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="[Javascript] Javascript 정리 - 2" /><meta name="twitter:site" content="@twitter_username" /><meta name="twitter:creator" content="@Bandito" /><meta name="google-site-verification" content="google_meta_tag_verification" /> <script type="application/ld+json"> {"author":{"@type":"Person","name":"Bandito"},"headline":"[Javascript] Javascript 정리 - 2","dateModified":"2021-01-01T20:40:00+09:00","datePublished":"2021-01-01T20:40:00+09:00","description":"asdsadasd","url":"https://suppplier.github.io/posts/studuying_javascript2/","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://suppplier.github.io/posts/studuying_javascript2/"},"@context":"https://schema.org"}</script><title>[Javascript] Javascript 정리 - 2 | Steadily, Constantly, Consistently</title><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico" type="image/x-icon"><link rel="icon" href="/assets/img/favicons/favicon.ico" type="image/x-icon"><link rel="apple-touch-icon" href="/assets/img/favicons/apple-icon.png"><link rel="apple-touch-icon" href="/assets/img/favicons/apple-icon-precomposed.png"><link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicons/apple-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicons/apple-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicons/apple-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicons/apple-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicons/apple-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicons/apple-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicons/apple-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicons/apple-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-icon-180x180.png"><link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicons/android-icon-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicons/favicon-96x96.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/manifest.json"><meta name='msapplication-config' content='/assets/img/favicons/browserconfig.xml'><meta name="msapplication-TileColor" content="#ffffff"><meta name="msapplication-TileImage" content="/assets/img/favicons/ms-icon-144x144.png"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="preconnect" href="cdn.jsdelivr.net"><link rel="dns-prefetch" href="cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha256-LA89z+k9fjgMKQ/kq4OO2Mrf8VltYml/VES+Rg0fh20=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous"><link rel="preload" href="/assets/css/post.css" as="style"><link rel="stylesheet" href="/assets/css/post.css"><link rel="preload" as="style" href="/assets/css/lib/bootstrap-toc.min.css"><link rel="stylesheet" href="/assets/css/lib/bootstrap-toc.min.css" /> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script defer src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.15.0,npm/bootstrap@4/dist/js/bootstrap.min.js"></script> <script async src="/assets/js/post.min.js"></script> <script defer src="/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id="></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', ''); }); </script><body data-spy="scroll" data-target="#toc"><div id="sidebar" class="d-flex flex-column"><div id="nav-wrapper"><div id="profile-wrapper" class="d-flex flex-column"><div id="avatar" class="d-flex justify-content-center"> <a href="/" alt="avatar"> <img src="/assets/img/sample/avatar.jpg" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="profile-text mt-3"><div class="site-title"> <a href="/">Steadily, Constantly, Consistently</a></div><div class="site-subtitle font-italic">Newb Programmer</div></div></div><ul class="nav flex-column"><li class="nav-item d-flex justify-content-center "> <a href="/" class="nav-link d-flex justify-content-center align-items-center w-100"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item d-flex justify-content-center "> <a href="/tabs/categories/" class="nav-link d-flex justify-content-center align-items-center w-100"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item d-flex justify-content-center "> <a href="/tabs/tags/" class="nav-link d-flex justify-content-center align-items-center w-100"> <i class="fa-fw fas fa-tags ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item d-flex justify-content-center "> <a href="/tabs/archives/" class="nav-link d-flex justify-content-center align-items-center w-100"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item d-flex justify-content-center "> <a href="/tabs/about/" class="nav-link d-flex justify-content-center align-items-center w-100"> <i class="fa-fw fas fa-info ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul></div><div class="sidebar-bottom d-flex flex-wrap justify-content-around mt-4"> <a href="https://github.com/Suppplier" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github-alt"></i> </a> <a href="https://twitter.com/twitter_username" aria-label="twitter" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['ziho2463','naver.com'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper" class="row justify-content-center topbar-down"><div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between"> <span id="breadcrumb"> <span> <a href="/"> Posts </a> </span> <span>[Javascript] Javascript 정리 - 2</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" placeholder="Search..."> <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper"><div id="main"><div class="row"><div id="post-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><h1 data-toc-skip>[Javascript] Javascript 정리 - 2</h1><div class="post-meta text-muted d-flex flex-column"><div> Posted <span class="timeago " data-toggle="tooltip" data-placement="bottom" title="Fri, Jan 1, 2021, 8:40 PM +0900" > Jan 1 <i class="unloaded">2021-01-01T20:40:00+09:00</i> </span> by <span class="author"> Bandito </span></div></div><div class="post-content"><h1 id="javascript-정리---2">Javascript 정리 - 2</h1><p>공부하면서 생소하거나 잘 모르던 내용들을 정리</p><ul><li>이 문서에 있는 내용들<ul><li><a href="#arguments">Arguments</a><li><a href="#call--apply">Call &amp; Apply</a><li><a href="#inheritance--prototype">Inheritance &amp; Prototype</a><li><a href="#standard-built-in-object">Standard Built-in Object</a></ul></ul><p><br /></p><h2 id="arguments">Arguments</h2><hr /><div class="language-html highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre><span class="nt">&lt;script&gt;</span>
+ <span class="kd">function</span> <span class="nx">sum</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">_sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>    
+    <span class="k">for</span><span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">i</span><span class="o">+</span><span class="dl">'</span><span class="s1"> : </span><span class="dl">'</span><span class="o">+</span><span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="o">+</span><span class="dl">'</span><span class="s1">&lt;br /&gt;</span><span class="dl">'</span><span class="p">);</span>
+        <span class="nx">_sum</span> <span class="o">+=</span> <span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+    <span class="p">}</span>   
+    <span class="k">return</span> <span class="nx">_sum</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">'</span><span class="s1">result : </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">));</span>   
+<span class="nt">&lt;/script&gt;</span>
+</pre></table></code></div></div><p>자바스크립트는 함수의 매개변수를 받는 측면에서 관대한 편이다. <br /> 위 코드에서 sum 함수는 지정된 매개변수가 없지만, 인자를 받는다고 해서 오류가 발생하지는 않는다.</p><p>자바스크립트의 함수에는 arguments 라는 특수한 배열에 존재한다. 사실은 배열이 아니고 객체이지만, 이는 배열과 유사하게 사용된다.</p><p>arguments 는 함수가 인자로 받은 값들을 저장하는 역할을 수행한다. <br /> 이를 통해 매개변수의 수가 정확하게 정해지지 않은 함수를 구현하거나, 전달된 인자의 개수에 따라 서로 다른 처리를 하는 함수를 구현할 수 있다.</p><div class="language-html highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre><span class="nt">&lt;script&gt;</span>
+<span class="kd">function</span> <span class="nx">func</span><span class="p">(</span><span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+        <span class="dl">'</span><span class="s1">func.length</span><span class="dl">'</span><span class="p">,</span> <span class="nx">func</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">arguments</span><span class="dl">'</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span>
+    <span class="p">);</span>
+<span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></table></code></div></div><p>위와 같은 코드에서 함수명.length 는 함수가 받기로 한 인자의 수, arguments.length 는 함수가 실제로 받은 인자의 수를 구할 수 있다.</p><p><br /></p><h2 id="call--apply">Call &amp; Apply</h2><hr /><div class="language-html highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre><span class="nt">&lt;script&gt;</span>
+    <span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">){</span>
+        <span class="k">return</span> <span class="nx">arg1</span> <span class="o">+</span> <span class="nx">arg2</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">));</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">]));</span>   
+<span class="nt">&lt;/script&gt;</span>
+</pre></table></code></div></div><p>call 과 apply 는 함수를 호출하는 방법 중 하나이다.</p><p>위의 코드와 같이 sum 이라는 함수에 대해서 아래의 세 방식은 모두 8을 로그로 출력한다.</p><p>call 과 apply는 첫 번째 인자로 객체를 받고, 이후에는 함수에서 지정된 매개변수에 대한 값을 전달한다. <br /> 전달된 객체는 함수 내에서 this 를 사용할 때 효과를 발휘한다.</p><div class="language-html highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre><span class="nt">&lt;script&gt;</span>
+    <span class="nx">o1</span> <span class="o">=</span> <span class="p">{</span><span class="na">val</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="na">val2</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="na">val3</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="nx">_sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="nx">name</span> <span class="k">in</span> <span class="k">this</span><span class="p">){</span>
+            <span class="nx">_sum</span> <span class="o">+=</span> <span class="k">this</span><span class="p">[</span><span class="nx">name</span><span class="p">];</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nx">_sum</span> <span class="o">+</span> <span class="nx">arg1</span> <span class="o">+</span> <span class="nx">arg2</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">o1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">o1</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">]));</span>   
+<span class="nt">&lt;/script&gt;</span>
+</pre></table></code></div></div><p>위 코드에서 함수 sum은 this의 값을 모두 더하는 반복문을 수행한다. <br /> call 과 apply 에서 첫 번째 인자로 전달된 o1이 함수 내에서 this의 값들로 사용될 수 있다. <br /> 즉 call 이나 apply 를 사용하면 해당 함수가 전달된 객체(o1)의 메서드인 것 처럼 사용이 가능하다는 뜻이다.</p><p>둘의 유일한 차이점은 매개변수를 넘길 때 call 은 단일 값으로 넘겨야 하고 apply는 배열 형태로 넘겨야 한다는 것이다.</p><p><br /></p><h2 id="inheritance--prototype">Inheritance &amp; Prototype</h2><hr /><div class="language-html highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre><span class="nt">&lt;script&gt;</span>
+<span class="kd">function</span> <span class="nx">Person</span><span class="p">(</span><span class="nx">name</span><span class="p">){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">introduce</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="dl">'</span><span class="s1">My name is </span><span class="dl">'</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span> 
+    <span class="p">}</span>   
+<span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></table></code></div></div><div class="language-html highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="nt">&lt;script&gt;</span>
+<span class="kd">function</span> <span class="nx">Person</span><span class="p">(</span><span class="nx">name</span><span class="p">){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">name</span><span class="o">=</span><span class="kc">null</span><span class="p">;</span>
+<span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">introduce</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="dl">'</span><span class="s1">My name is </span><span class="dl">'</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span> 
+<span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></table></code></div></div><p>위 두 코드의 함수 선언 방식은 같은 결과를 내는 함수를 만들지만, Person 이라는 객체를 여러개 만들어낸다고 가정하면 아래의 코드가 메모리 관점에서 훨씬 유리하다.</p><p>위의 코드는 객체마다 속성을 만들어 내겠지만, 아래의 코드에서는 Person의 생성자를 통해 만들어지는 객체들이 prototype 이라는 object를 공유할 것이다.</p><p>이와 같이 자바 스크립트에서 함수가 정의되면 기본적으로 생성자가 부여되고, new 를 통해 객체를 생성할 수 있게 됨과 동시에 Prototype Object 라는 것을 가지게 된다. <br /> 이는 새로운 객체가 생성될 때 Prototype Object를 참조하여 값들을 지니게 한다.</p><p>결국 Prototype 에 속성을 추가한다는 것은 해당 함수를 통해 만들어질 객체의 틀을 구성하는 것과 같다고 할 수 있을 것 같다.</p><div class="language-html highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre><td class="rouge-code"><pre><span class="nt">&lt;script&gt;</span>
+    <span class="kd">function</span> <span class="nx">Ultra</span><span class="p">(){}</span>
+    <span class="nx">Ultra</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">ultraProp</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    
+    <span class="kd">function</span> <span class="nx">Super</span><span class="p">(){}</span>
+    <span class="nx">Super</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Ultra</span><span class="p">();</span>
+    
+    <span class="kd">function</span> <span class="nx">Sub</span><span class="p">(){}</span>
+    <span class="nx">Sub</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Super</span><span class="p">();</span>
+    
+    <span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Sub</span><span class="p">();</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">o</span><span class="p">.</span><span class="nx">ultraProp</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></table></code></div></div><p>위 코드에서는 property 를 통해 상속이 이루어지는 것을 볼 수 있다. <br /> Sub() 은 Super() 를 상속받고, Super() 는 Ultra()를 상속받는다. <br /> 그리고 마지막에 Sub() 을 통해 생성된 객체 o 는 true 를 콘솔에 출력한다.</p><p>이처럼 o 가 Ultra() 의 ultraProp 에 접근 가능한 이유는 Sub() 와 Ultra() 가 prototype chain 으로 연결되어 있기 때문이다.</p><ol><li>객체 o 에서 UltraProp 을 찾는다.<li>없다면 Sub.prototype.ultraProp 을 찾는다.<li>없다면 Super.prototype.ultraProp 을 찾는다.<li>없다면 Ultra.prototype.ultraProp 을 찾는다.</ol><p>이러한 관계를 prototype chain 이라고 한다.</p><p><br /></p><h2 id="standard-built-in-object">Standard Built-in Object</h2><hr /><p>자바 스크립트에서 지원하는 표준 내장 객체에는 여러가지가 있다. <br /> Object, Functiom, Array, String, Boolean 등이 표준 내장 객체에 포함되며, 이는 프로그래밍을 위한 기본적인 도구들로 사용된다.</p><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">Mozilla Web Docs</a> 에서 이러한 표준 내장 객체의 정보들을 알아볼 수 있다.</p><p>이러한 표준 내장 객체에는 다양한 기본 메소드들이 존재한다.<br /> 이 중 객체명.prototype.메소드명() 으로 구현되어있는 메소드들의 경우 <br /> <strong>생성한 객체.메소드명()</strong> 으로 사용할 수 있고 <br /> 객체명.메소드명() 으로 구현되어있는 메소드들의 경우 <br /> <strong>객체명.메소드명(생성한 객체)</strong> 으로 사용할 수 있다.</p><p>위에서 언급했던 prototype 을 사용하면 표준 내장 객체에도 새로운 메소드를 추가하거나 수정할 수 있다.</p><div class="language-html highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre><span class="nt">&lt;script&gt;</span>
+<span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">randomval</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">index</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">length</span><span class="o">*</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">());</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">[</span><span class="nx">index</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="dl">'</span><span class="s1">A</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">B</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">C</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">D</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">E</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">randomval</span><span class="p">());</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></table></code></div></div><p>위 코드처럼 prototype에 새로운 메소드를 정의하여 배열에 포함된 랜덤 값을 출력하는 randomval 메소드를 사용할 수 있다.</p><p>하지만 표준 내장 객체에 메소드를 추가하는 것은 위험할 수 있다.</p><div class="language-html highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="nt">&lt;script&gt;</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">A</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">B</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">C</span><span class="dl">'</span><span class="p">];</span>
+<span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">r1</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span> <span class="kd">var</span> <span class="nx">r1</span><span class="p">;};</span>
+<span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">r2</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span> <span class="kd">var</span> <span class="nx">r2</span><span class="p">;};</span>
+
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">num</span> <span class="k">in</span> <span class="nx">a</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="nx">num</span><span class="p">]);</span>
+<span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></table></code></div></div><p>위 코드에서 우리는 로그에 A, B, C 가 출력되기를 기대할 수 있다. 하지만 출력 결과는 다음과 같다.</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre>A
+B
+C
+f (){var r1;}
+f (){var r2;}
+</pre></table></code></div></div><p>물론 이는 로그를 출력하는 반복문 내에 a.hasOwnProperty(num) 을 사용한 조건문을 추가하여 prototype 으로 생성된 메소드들을 무시하고 출력할 수 있다.</p><p>하지만 이처럼 임의로 추가한 메소드가 결과에 영향을 끼칠 수 있다는 사실을 잘 인지하여 코드에 대한 정확한 파악 후 사용하여야 한다.</p><p><br /><br /><br /> <em>참고한 글이나 영상 :</em> <br /> <em><a href="https://opentutorials.org/course/743">https://opentutorials.org/course/743</a></em></p></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/study/'>Study</a>, <a href='/categories/javascript/'>Javascript</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/javascript/" class="post-tag no-text-decoration" >Javascript</a> <a href="/tags/html/" class="post-tag no-text-decoration" >HTML</a> <a href="/tags/frontend/" class="post-tag no-text-decoration" >FrontEnd</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=[Javascript] Javascript 정리 - 2 - Steadily, Constantly, Consistently&url=https://Suppplier.github.io/posts/studuying_javascript2/" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=[Javascript] Javascript 정리 - 2 - Steadily, Constantly, Consistently&u=https://Suppplier.github.io/posts/studuying_javascript2/" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://telegram.me/share?text=[Javascript] Javascript 정리 - 2 - Steadily, Constantly, Consistently&url=https://Suppplier.github.io/posts/studuying_javascript2/" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i class="fa-fw fas fa-link small" onclick="copyLink()" data-toggle="tooltip" data-placement="top" title="Copy link"></i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"><div class="access"><div id="access-lastmod" class="post"> <span>Recent Update</span><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/posts/prog_87377/">[Programmers][Javascript] 교점에 별 만들기</a><li><a href="/posts/hackerrank_1/">[HackerRank][Javascript] Forming a Magic Square</a><li><a href="/posts/leetcode_5/">[Leetcode][Javascript] Longest Palindromic Substring</a><li><a href="/posts/leetcode_4/">[Leetcode][Javascript] Median of Two Sorted Arrays</a><li><a href="/posts/01/">42 서울 본과정 근황 & 부스트캠프 챌린지 과정 시작</a></ul></div><div id="access-tags"> <span>Trending Tags</span><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/javascript/">Javascript</a> <a class="post-tag" href="/tags/algorithm/">Algorithm</a> <a class="post-tag" href="/tags/programmers/">Programmers</a> <a class="post-tag" href="/tags/frontend/">FrontEnd</a> <a class="post-tag" href="/tags/html/">HTML</a> <a class="post-tag" href="/tags/computer-sceince/">Computer Sceince</a> <a class="post-tag" href="/tags/cs/">CS</a> <a class="post-tag" href="/tags/black-coffee/">Black Coffee</a> <a class="post-tag" href="/tags/dictionary/">dictionary</a> <a class="post-tag" href="/tags/life/">life</a></div></div></div><div id="toc-wrapper" class="pl-0 pr-4 mb-5"> <span class="pl-3 pt-2 mb-2">Contents</span><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="post-extend-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/posts/inflearn_01/"><div class="card-body"> <span class="timeago small" > Apr 13 <i class="unloaded">2021-04-13T17:00:00+09:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Javascript] Deep Copy</h3><div class="text-muted small"><p> Deep Copy 프로그래밍을 하다 보면 이미 존재하는 객체를 복사하고 싶은 경우가 있다. 다음과 같은 예시를 들어보자.. 1 2 3 4 5 6 7 8 9 let obj = { a : 1, b : 2 }; let cpy = obj; console.log(obj); // {a: 1, b: 2} console.log(cpy); // {...</p></div></div></a></div><div class="card"> <a href="/posts/entires_fromentires_values/"><div class="card-body"> <span class="timeago small" > Apr 13 <i class="unloaded">2021-04-13T18:00:00+09:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Javascript] entries, fromEntries, values</h3><div class="text-muted small"><p> 이 문서에 있는 내용들 entries fromEntries values entries entries 메서드는 for…in와 같은 순서로 주어진 객체 자체의 enumerable 속성 [key, value] 쌍의 배열을 반환한다. 즉, 객체의 {key : value} 를 배열의 [k...</p></div></div></a></div><div class="card"> <a href="/posts/studuying_javascript/"><div class="card-body"> <span class="timeago small" > Dec 29, 2020 <i class="unloaded">2020-12-29T20:35:00+09:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Javascript] Javascript 정리 - 1</h3><div class="text-muted small"><p> Javascript 정리 - 1 공부하면서 생소하거나 잘 모르던 내용들을 정리 이 문서에 있는 내용들 정규 표현식 배열 함수 Callback 함수 클로저 정규 표현식 정규 표현식은 자바스크립트 외에서도 사용할 수 있다. 모든 정규 표현식은 /정규표현식/ 과 같이 표...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/posts/studuying_javascript/" class="btn btn-outline-primary"><p>[Javascript] Javascript 정리 - 1</p></a> <a href="/posts/BOJ_10757/" class="btn btn-outline-primary"><p>[Baekjoon][C++] 10757 - 큰 수 A+B</p></a></div><div id="disqus" class="pt-2 pb-2"><p class="font-italic text-center text-muted small"> Comments powered by <a href="https://disqus.com/">Disqus</a>.</p></div><script src="/assets/js/lib/jquery.disqusloader.min.js"></script> <script> var options = { scriptUrl: '//suppplier-github-io.disqus.com/embed.js', disqusConfig: function() { this.page.url = 'https://Suppplier.github.io/posts/studuying_javascript2/'; this.page.identifier = '/posts/studuying_javascript2/'; } }; $.disqusLoader('#disqus', options); </script></div></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script> <script type="text/javascript"> const imgs = document.querySelectorAll('#post-wrapper img'); const observer = lozad(imgs); observer.observe(); </script><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center"><div class="footer-left"><p class="mb-0"> © 2021 <a href="https://twitter.com/username">Junseok Park</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy/" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-xl-11 post-content"><div id="search-hints"><h4 class="text-muted mb-4">Trending Tags</h4><a class="post-tag" href="/tags/javascript/">Javascript</a> <a class="post-tag" href="/tags/algorithm/">Algorithm</a> <a class="post-tag" href="/tags/programmers/">Programmers</a> <a class="post-tag" href="/tags/frontend/">FrontEnd</a> <a class="post-tag" href="/tags/html/">HTML</a> <a class="post-tag" href="/tags/computer-sceince/">Computer Sceince</a> <a class="post-tag" href="/tags/cs/">CS</a> <a class="post-tag" href="/tags/black-coffee/">Black Coffee</a> <a class="post-tag" href="/tags/dictionary/">dictionary</a> <a class="post-tag" href="/tags/life/">life</a></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.3/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="https://Suppplier.github.io{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"><div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>{categories}</div><div><i class="fa fa-tag fa-fw"></i>{tags}</div></div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No result founds.</p>' }); </script>
